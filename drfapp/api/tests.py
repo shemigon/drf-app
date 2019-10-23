@@ -34,7 +34,7 @@ class BaseTest(TestCase):
 
 
 class UserTestCase(BaseTest):
-    def test_users(self):
+    def test_permissions(self):
         test_user_id = self.user1.id
         test_org = self.user1.organization_id
         tests = {
