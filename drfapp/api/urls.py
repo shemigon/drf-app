@@ -18,4 +18,6 @@ urlpatterns = [
          views.OrganizationUserListView.as_view(), name='organization-users'),
     path('organizations/<int:pk>/users/<int:user_id>',
          views.OrganizationUserView.as_view(), name='organization-users'),
+
+    path('info/', views.InfoView.as_view(), name='info'),
 ]

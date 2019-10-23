@@ -135,3 +135,15 @@ class OrganizationPermissionsTestCase(BaseTest):
             self.client.force_login(user)
             resp = self.client.get(url)
             self.assertEqual(resp.status_code, status_code, user)
+
+
+class InfoTestCase(BaseTest):
+    def test_ok(self):
+        self.client.force_login(self.user1)
+        resp = self.client.get(reverse('api:info'))
+        self.assertDictEqual(resp.data, {
+            "user_name": self.user1.name,
+            "id": self.user1.id,
+            "organization_name": self.user1.organization.name,
+            "public_ip": "127.0.0.1"
+        })

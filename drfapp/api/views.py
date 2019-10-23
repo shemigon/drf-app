@@ -3,6 +3,8 @@ from rest_framework.generics import get_object_or_404, ListAPIView, \
     ListCreateAPIView, RetrieveAPIView, RetrieveUpdateAPIView, \
     RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from drfapp.api.permissions import OrganizationPermission, UserPermission
 from drfapp.api.serializers import GroupSerializer, OrganizationSerializer, \
@@ -96,3 +98,19 @@ class OrganizationUserView(RetrieveAPIView):
         self.check_object_permissions(self.request, obj)
 
         return obj
+
+
+class InfoView(APIView):
+    permission_classes = IsAuthenticated,
+
+    def get(self, request):
+        try:
+            ip = request.META.get('HTTP_X_FORWARDED_FOR').split(',')[0]
+        except AttributeError:
+            ip = request.META.get('REMOTE_ADDR')
+        return Response({
+            'user_name': request.user.name,
+            'id': request.user.id,
+            'organization_name': request.user.organization.name,
+            'public_ip': ip
+        })
