@@ -39,6 +39,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100)),
                 ('phone', models.CharField(max_length=100)),
                 ('email', models.EmailField(max_length=254, unique=True)),
+                ('birthdate', models.DateField(blank=True, null=True)),
                 ('is_staff', models.BooleanField(default=False)),
                 ('is_active', models.BooleanField(default=True)),
                 ('date_joined', models.DateTimeField(auto_now_add=True)),

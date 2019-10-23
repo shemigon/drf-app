@@ -1,0 +1,189 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Administrator",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "Viewer",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 3,
+    "fields": {
+      "name": "User",
+      "permissions": []
+    }
+  },
+  {
+    "model": "core.organization",
+    "pk": 1,
+    "fields": {
+      "name": "Organization 1",
+      "phone": "(305) 123-4567",
+      "address": "1000 SE 3rd St Miami, 33010"
+    }
+  },
+  {
+    "model": "core.organization",
+    "pk": 2,
+    "fields": {
+      "name": "Organization 2",
+      "phone": "(954) 123-4567",
+      "address": "1000 Federal Hwy, Fort Lauderdale, 33316"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$EFRO3DwdBRR5$F7gaFDuENlfZExT2ERFZL1rG+EyiCFEAlNqg+L4HcKQ=",
+      "last_login": "2019-10-23T00:24:20.170Z",
+      "is_superuser": true,
+      "name": "",
+      "phone": "",
+      "email": "root@localhost",
+      "organization": null,
+      "birthdate": null,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-10-23T00:02:51.002Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw",
+      "last_login": null,
+      "is_superuser": false,
+      "name": "admin1",
+      "phone": "(305) 111-1234",
+      "email": "admin@org1.com",
+      "organization": 1,
+      "birthdate": "1984-05-02",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-10-23T00:29:23.863Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw=",
+      "last_login": null,
+      "is_superuser": false,
+      "name": "viewer1",
+      "phone": "(305) 222-1234",
+      "email": "viewer@org1.com",
+      "organization": 1,
+      "birthdate": "1984-05-02",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-10-23T00:29:23.863Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw=",
+      "last_login": null,
+      "is_superuser": false,
+      "name": "user1",
+      "phone": "(305) 333-1234",
+      "email": "user@org1.com",
+      "organization": 1,
+      "birthdate": "1984-05-02",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-10-23T00:29:23.863Z",
+      "groups": [
+        3
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw",
+      "last_login": null,
+      "is_superuser": false,
+      "name": "admin2",
+      "phone": "(954) 111-1234",
+      "email": "admin@org2.com",
+      "organization": 2,
+      "birthdate": "1984-05-02",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-10-23T00:29:23.863Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw=",
+      "last_login": null,
+      "is_superuser": false,
+      "name": "viewer2",
+      "phone": "(954) 222-1234",
+      "email": "viewer@org2.com",
+      "organization": 2,
+      "birthdate": "1984-05-02",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-10-23T00:29:23.863Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw=",
+      "last_login": null,
+      "is_superuser": false,
+      "name": "user2",
+      "phone": "(954) 333-1234",
+      "email": "user@org2.com",
+      "organization": 2,
+      "birthdate": "1984-05-02",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-10-23T00:29:23.863Z",
+      "groups": [
+        3
+      ],
+      "user_permissions": []
+    }
+  }
+]

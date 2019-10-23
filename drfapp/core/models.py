@@ -1,6 +1,16 @@
+from enum import Enum, unique
+
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
+from django.utils.functional import cached_property
+
+
+@unique
+class GroupName(Enum):
+    Administrator = 'Administrator'
+    Viewer = 'Viewer'
+    User = 'User'
 
 
 class UserManager(BaseUserManager):
@@ -40,6 +50,9 @@ class Organization(models.Model):
     phone = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=100)
@@ -49,6 +62,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         'Organization', models.PROTECT, related_name='users',
         blank=True, null=True
     )
+    birthdate = models.DateField(blank=True, null=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(auto_now_add=True)
@@ -58,6 +72,21 @@ class User(AbstractBaseUser, PermissionsMixin):
     EMAIL_FIELD = 'email'
     USERNAME_FIELD = 'email'
 
+    def __str__(self):
+        s = self.name
+        if self.organization_id:
+            s += f' ({self.organization})'
+        return s
+
     def clean(self):
         super().clean()
         self.email = self.__class__.objects.normalize_email(self.email)
+
+    @cached_property
+    def group(self):
+        """
+        Since user can only belong to one group
+        """
+        groups = self.groups.all()
+        if groups:
+            return GroupName(groups[0].name)
