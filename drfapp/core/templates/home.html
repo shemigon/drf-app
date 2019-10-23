@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Django REST API Exercise</title>
+</head>
+<body>
+<h1>Django REST API Exercise</h1>
+<h2>Introduction</h2>
+<p>This exercise is to prove your skills using Django Framework and Django Rest Framework.</p>
+<p>You should create a GIT repo in either Bitbucket, GitHub or GitLab. Please follow GitFlow on the Git repo. Share link to the repository with your FUSUS contact.</p>
+<p>Please take in consideration application will be running in two environments DEV and PROD.</p>
+<h2>Models</h2>
+<p>Django should have models below:</p>
+<h3>Organization model</h3>
+<p>An organization should contain the following fields:</p>
+<ul>
+  <li>id</li>
+  <li>name</li>
+  <li>phone</li>
+  <li>address</li>
+</ul>
+<h3>User model</h3>
+<p>A user should contain the following fields:</p>
+<ul>
+  <li>id</li>
+  <li>name</li>
+  <li>phone</li>
+  <li>email (must be unique)</li>
+  <li>organization (User belong to just one organization)</li>
+  <li>birthdate</li>
+</ul>
+<h2>API Endpoints</h2>
+<p>DRF Should support the endpoints below</p>
+<h3>Auth Endpoints:</h3>
+<p>API must support JWT authentication</p>
+<ul>
+  <li>POST
+    <a href="{% url "api:jwt-token" %}">/api/auth/login/</a> using email address
+  </li>
+  <li>GET
+    <a href="{% url "api:groups" %}">/api/auth/groups/</a> Should return Authentication Groups. Application should have:
+  </li>
+  <li>
+    <ul>
+      <li>Administrator: Full access to CRUD Any User in his org and RU Organization o Viewer: List and Retrieve and User in his org.</li>
+      <li>User: CRU his own user</li>
+    </ul>
+  </li>
+</ul>
+<h3>User Endpoints:</h3>
+<ul>
+  <li>GET
+    <a href="{% url "api:users" %}" target="_blank">/api/users/</a> List all the users for the user organization if user is `Administrator` or `Viewer`. Must return all the user model fields. Should support search by name, email. Should support filter by phone.
+  <li>GET
+    <a href="{% url "api:users" %}" target="_blank">/api/users/{id}/</a> Retrieve user information, and the organization id and name
+  <li>POST
+    <a href="{% url "api:users" %}" target="_blank">/api/users/</a> Create an user for the organization, must set password as well. Request user must be Administrator
+  <li>PATCH
+    <a href="{% url "api:users" %}" target="_blank">/api/users/{id}</a> Update user information for the user_id if request user is `Administrator` of his organization. Or request user is user_id
+  <li>DELETE
+    <a href="{% url "api:users" %}" target="_blank">/api/users/{id}</a> Delete user for the user_id if request user is `Administrator` of his organization
+</ul>
+<h3>Organization Endpoints:</h3>
+<ul>
+  <li>GET
+    <a href="{% url "api:organizations" 1 %}" target="_blank">/api/organizations/{id}/</a> Retrieve organization information if request user is `Administrator` or `Viewer
+  <li>PATCH
+    <a href="{% url "api:organizations" 1 %}" target="_blank">/api/organizations/{id}</a> Update organization if request user is `Administrator`.
+  <li>GET
+    <a href="{% url "api:organization-users" 1 %}" target="_blank">/api/organization/{id}/users</a> List all the users for the user organization if user is `Administrator` or `Viewer`. Must return just id and name of the user
+  <li>GET
+    <a href="{% url "api:organization-users" 1 %}" target="_blank">/api/organization/{id}/users/{id}/</a> Retrieve user id and name if if user is `Administrator` or `Viewer`
+</ul>
+<h3>Other Endpoints:</h3>
+<ul>
+  <li>
+    GET
+    <a href="{% url "api:info" %}" target="_blank">/api/info/</a> Should return {`user_name`, `id`, `organization_name`, `public_ip`} Public Ip must be the internet public IP of the server where code is running
+  </li>
+</ul>
+</body>
+</html>

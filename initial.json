@@ -64,7 +64,7 @@
     "model": "core.user",
     "pk": 2,
     "fields": {
-      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw",
+      "password": "pbkdf2_sha256$150000$jpN3PpODy7Ko$Z8i4Ne5K6+Taga5AhS0ohqJXsi2/k/nZ1ZNa93YBGBA=",
       "last_login": null,
       "is_superuser": false,
       "name": "admin1",
@@ -85,7 +85,7 @@
     "model": "core.user",
     "pk": 3,
     "fields": {
-      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw=",
+      "password": "pbkdf2_sha256$150000$O9HTUdE8pM3k$+ikEM8Sw5ew0lOn9ii2L461KHLTZBUbW8gve8CSN2ZA=",
       "last_login": null,
       "is_superuser": false,
       "name": "viewer1",
@@ -106,7 +106,7 @@
     "model": "core.user",
     "pk": 4,
     "fields": {
-      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw=",
+      "password": "pbkdf2_sha256$150000$AFUjiBuv8rYD$7tBK54VIN77F3B5jZmCPsTvr2Y88wFia7jtzbl2MYTc=",
       "last_login": null,
       "is_superuser": false,
       "name": "user1",
@@ -127,7 +127,7 @@
     "model": "core.user",
     "pk": 5,
     "fields": {
-      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw",
+      "password": "pbkdf2_sha256$150000$RuZxfr67ld6m$f/H9jF3hWikZ36WP/8mW0tda/n97zMH+OlaMdE9xD9o=",
       "last_login": null,
       "is_superuser": false,
       "name": "admin2",
@@ -148,7 +148,7 @@
     "model": "core.user",
     "pk": 6,
     "fields": {
-      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw=",
+      "password": "pbkdf2_sha256$150000$1qKekmtxDF0K$RjL+p5mpaqSQQ57t4QAou0tOaHIg/vFXMP6RPW5PPkk=",
       "last_login": null,
       "is_superuser": false,
       "name": "viewer2",
@@ -169,7 +169,7 @@
     "model": "core.user",
     "pk": 7,
     "fields": {
-      "password": "pbkdf2_sha256$150000$keE2fpZxMBsR$tp9dkQGq80LUH7gA21C7f1B25wpvpEr1dQ1K1Lq3hCw=",
+      "password": "pbkdf2_sha256$150000$LPpOWpeQvPpm$WvcaMLE5f6q3H32+8RVtTkfacNgztyLT0OzZ47oGaWM=",
       "last_login": null,
       "is_superuser": false,
       "name": "user2",
