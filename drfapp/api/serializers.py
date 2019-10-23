@@ -28,3 +28,9 @@ class UserOrganizationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = 'id', 'name', 'phone', 'email', 'organization', 'birthdate'
+
+
+class UserMinSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = 'id', 'name'
